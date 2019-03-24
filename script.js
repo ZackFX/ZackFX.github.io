@@ -19,11 +19,17 @@ function init() {
     image.src="flower2.png";
     document.getElementById("new_element").appendChild(image);
 
-    let spans = document.getElementById("rainbow").toARRAY();
+    let spans = document.getElementsByClassName("yo");
     let colors = ["red", "orange","yellow","green","blue","purple","pink"];
-
     for (var i = spans.length - 1; i >= 0; i--) {
         spans[i].style.color = colors[i];
     }
 
+    var changeSrc = function(event) {
+        if (event.target.src) {
+          event.target.src = "flower2.png";
+        }
+      };
+    document.getElementById("event").addEventListener("mouseover", changeSrc);
+    let filename = event.target.src.replace(/^.*[\\\/]/, '');
 }
